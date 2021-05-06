@@ -1,0 +1,36 @@
+.home_sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #eee;
+  padding-top: 60px;
+  padding-right: 0;
+  box-shadow: inset 0 0 2px grey;
+}
+.home_continaer {
+  margin-left: auto;
+  padding-top: 60px;
+}
+.home_sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+.home_sidebar ul li {
+  list-style: none;
+}
+
+.home_sidebar ul li a {
+  display: block;
+  color: #333;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  margin: 5px 0 5px 10px;
+  border-radius: 5px 0 0 5px;
+  text-decoration: none;
+}
+.home_sidebar ul li a.active {
+  background: #333;
+  color: #fff
+}
