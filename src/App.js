@@ -25,6 +25,7 @@ const App = (props) => {
     if (auth.authenticate)
       dispatch(getInitialData())
   }, [auth.authenticate])
+
   return (
     <div className="App">
       <Switch>
