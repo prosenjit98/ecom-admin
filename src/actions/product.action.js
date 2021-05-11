@@ -10,3 +10,22 @@ export const addProduct = (formdata) => {
     )
   }
 }
+
+export const deleteProductById = (payload) => {
+  return async (dispatch) => {
+    console.log(payload);
+    try {
+      const res = await axiosInstance.post('product/deleteProductById', { data: payload })
+      dispatch({ type: productConstants.DELETE_PRODUCT_REQUEST })
+      if (res.status === 202) {
+        dispatch({ type: productConstants.DELETE_PRODUCT_SUCCESS })
+        dispatch(getInitialData())
+      }
+      else {
+        dispatch({ type: productConstants.DELETE_PRODUCT_FAILURE })
+      }
+    } catch (error) {
+      dispatch({ type: productConstants.DELETE_PRODUCT_FAILURE })
+    }
+  }
+}

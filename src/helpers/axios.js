@@ -26,7 +26,7 @@ axiosInstance.interceptors.response.use((res) => {
 }, (error) => {
   if (error.response) {
     const { status } = error.response;
-    if (status === 500) {
+    if (status === 401) {
       localStorage.clear();
       store.dispatch({ type: authConstants.LOGOUT_SUCCESS })
     }
@@ -35,4 +35,4 @@ axiosInstance.interceptors.response.use((res) => {
 
 })
 
-export default axiosInstance 
+export default axiosInstance

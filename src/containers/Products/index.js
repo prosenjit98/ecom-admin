@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Col, Container, Row, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllCategory } from '../../actions'
+import { deleteProductById, getAllCategory } from '../../actions'
 import { addProduct } from '../../actions'
 import Layout from '../../components/Layouts'
 import Input from '../../UI/Input'
@@ -76,6 +76,7 @@ const Products = (props) => {
             <th>Price</th>
             <th>Quantity</th>
             <th>Category</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -86,6 +87,13 @@ const Products = (props) => {
               <td>{prod.price}</td>
               <td>{prod.quantity}</td>
               <td>{prod.category && prod.category.name}</td>
+              <td onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+              }}>
+                <button >Edit</button>
+                <button onClick={() => dispatch(deleteProductById({ productId: prod._id }))}>Delete</button>
+              </td>
             </tr>)}
 
         </tbody>
