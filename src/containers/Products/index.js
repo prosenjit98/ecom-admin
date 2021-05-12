@@ -129,7 +129,7 @@ const Products = (props) => {
           <Col className="product_img_main_container">
             {productDetails && productDetails.productPictures.map((pic) =>
               <div className="product_img_container">
-                <img src={generatePubicUrl(pic.img)} />
+                <img src={pic.img} />
               </div>)}
           </Col>
         </Row>
